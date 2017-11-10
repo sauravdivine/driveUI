@@ -1,0 +1,31 @@
+// .example-card {
+//     width: 270px;
+//   }
+
+    .card-image{
+        width: 100%;
+    }
+  
+  .example-header-image {
+    background-image: url('/assets/img/man.png');
+    background-size: cover;
+  }
+
+  .info-header{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    padding: 12px;
+    font-size: 22px;
+  }
+
+  .info-body{
+    flex: 1 1 auto;
+  }
+
+  .info-card-share{
+    float: right;
+    position: relative;
+    margin-top: -25px;
+    margin-right: 5px;
+  }

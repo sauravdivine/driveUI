@@ -1,0 +1,21 @@
+.page-container{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header-container{
+    height: 128px;
+}
+
+.main-container{
+    height: calc(100vh - 128px);
+    width: 100%;
+}
+
+.upload-fab{
+      position: absolute;
+      right: 30px;
+      bottom: 20px;
+      z-index: 1;
+}

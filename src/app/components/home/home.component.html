@@ -1,0 +1,25 @@
+<div class="page-container">
+  <div class="header-container">
+      <app-toolbar>loading....</app-toolbar>
+  </div>
+
+  <div class="main-container">
+      <app-side-nav-bar-left>loading....</app-side-nav-bar-left>
+      <!-- <button mat-mini-fab color="accent" class="example-fab" >X</button> -->
+      <button mat-mini-fab class="upload-fab" [matMenuTriggerFor]="newMenu">
+          <mat-icon>file_upload</mat-icon>
+      </button>
+      <mat-menu #newMenu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>insert_drive_file</mat-icon>
+                <span>Single file</span>
+              </button>
+              <mat-divider></mat-divider>
+              <button mat-menu-item>
+                <mat-icon>insert_drive_file</mat-icon>
+                <span>Multiple file</span>
+              </button>
+            </mat-menu>
+  </div>
+
+</div>

@@ -1,0 +1,46 @@
+<mat-toolbar color="primary">
+  <mat-icon>storage</mat-icon>
+  <span> &nbsp;Drive</span>
+  <span class="spacer"></span>
+  <input class="search-input" type="search" placeholder="Search " value="">
+  <mat-icon class="example-icon" matTooltip="Themes">format_color_fill</mat-icon>
+  <div class="avtar" [matMenuTriggerFor]="profileMenu"></div>
+  <mat-toolbar-row>
+    <button mat-raised-button color="accent" [matMenuTriggerFor]="newMenu">NEW</button>
+    <span class="breadcrum">My Drive ></span>
+    <!-- <span class="example-spacer"></span> -->
+    <mat-icon class="example-icon" matTooltip="Get share link">link</mat-icon>
+    <mat-icon class="example-icon" matTooltip="Share">person_add</mat-icon>
+    <mat-icon class="example-icon" matTooltip="Delete" (click)="deleteFile()" *ngIf="(selectedFileId$ | async) > 0">delete</mat-icon>
+    <mat-icon class="example-icon" matTooltip="options">more_vert</mat-icon>
+    <mat-icon class="example-icon" matTooltip="Grid view">view_module</mat-icon>
+    <mat-icon class="example-icon" matTooltip="info">info</mat-icon>
+    <mat-icon class="example-icon" matTooltip="Settings">settings</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-menu #profileMenu="matMenu">
+  <!-- <app-account-card>card loading....</app-account-card> -->
+  <button mat-menu-item>
+    <mat-icon>insert_drive_file</mat-icon>
+    <span>Text file</span>
+  </button>
+</mat-menu>
+<mat-menu #newMenu="matMenu">
+  <button mat-menu-item (click)="addFile()">
+    <mat-icon>insert_drive_file</mat-icon>
+    <span>Text file</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>create_new_folder</mat-icon>
+    <span>Folder</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>
+    <mat-icon>insert_drive_file</mat-icon>
+    <span>File Folder</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>create_new_folder</mat-icon>
+    <span>Folder upload</span>
+  </button>
+</mat-menu>

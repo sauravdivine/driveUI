@@ -1,0 +1,40 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef class="my-mat-header-cell"> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="my-mat-cell">
+        <div class="nameCell">
+          <mat-icon>folder</mat-icon>
+          <span> &nbsp;&nbsp;{{element.name}}</span>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="owner">
+      <mat-header-cell *matHeaderCellDef> Owner </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.owner}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="last_modified">
+      <mat-header-cell *matHeaderCellDef> Last modified </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.last_modified}} </mat-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="size">
+      <mat-header-cell *matHeaderCellDef> Size </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.size}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="row" [ngClass]="{'highlight': (selectedFileId$ | async) == row.id}" (click)="select(row)">
+    </mat-row>
+  </mat-table>
+</div>
