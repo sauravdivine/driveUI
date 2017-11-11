@@ -1,7 +1,8 @@
 <mat-sidenav-container class="body-container">
   <mat-sidenav #sideFixed class="sidenav" mode="side" opened="true">
     <mat-nav-list>
-      <mat-list-item class="navItem" *ngFor="let folder of folders; let idx = index" [ngClass]="{'active': active==idx}" (click)="active = idx" (click)="openSnackBar(folder.name , 'UNDO')">
+      <mat-list-item class="navItem" *ngFor="let folder of folders; let idx = index" [ngClass]="{'active': active==idx}" (click)="active = idx"
+        (click)="openSnackBar(folder.name , 'UNDO')">
         <mat-icon mat-list-icon>{{folder.icon}}</mat-icon>
         <h4 mat-line>{{folder.name}}</h4>
       </mat-list-item>
@@ -12,17 +13,14 @@
   </mat-sidenav>
 
   <mat-sidenav #infoSidenav align="end" mode="side" opened="true" class="right-sidenav">
-    <!-- <button mat-icon-button class="close-button" (click)="infoSidenav.close()">
-      <mat-icon aria-label="close icon">close</mat-icon>
-    </button> -->
-    <button mat-mini-fab color="accent" class="close-button" (click)="infoSidenav.close()">X</button>
-    <!-- <button mat-mini-fab color="primary">Primary</button> -->
-        <app-file-info>card loading....</app-file-info>
-    </mat-sidenav>
-
-  <div class="sidenav-content">
-    <div class="content">
-      <app-content-table>table loading...</app-content-table>
+    <mat-icon class="close-button" matTooltip="close" (click)="infoSidenav.close()">close</mat-icon>
+    <app-file-info>card loading....</app-file-info>
+  </mat-sidenav>
+  <mat-sidenav-content class="mat-sidenav-content">
+    <div class="sidenav-content">
+      <div class="content">
+        <app-content-table>table loading...</app-content-table>
+      </div>
     </div>
-  </div>
+  </mat-sidenav-content>
 </mat-sidenav-container>
