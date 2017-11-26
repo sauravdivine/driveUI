@@ -1,13 +1,13 @@
 <div class="info-header">
   <mat-icon>folder</mat-icon>
-  <span> &nbsp;&nbsp;Waynad trip
+  <span> &nbsp;&nbsp;{{selectedFile.name}}
   </span>
 </div>
 <div class="info-body">
   <mat-tab-group>
     <mat-tab label="DETAILS">
       <div class="preview">
-        <img class="card-image" src="assets/img/2.jpg" alt="image">
+        <img class="card-image" src="assets/img/folder.png" alt="image">
       </div>
 
       <button mat-mini-fab class="info-card-share">
@@ -21,7 +21,7 @@
         </tr>
         <tr>
           <td>Size</td>
-          <td>15 mb</td>
+          <td>{{selectedFile.size}}</td>
         </tr>
         <tr>
           <td>Location</td>
@@ -29,15 +29,15 @@
         </tr>
         <tr>
           <td>Owner</td>
-          <td>me</td>
+          <td>{{selectedFile.owner}}</td>
         </tr>
         <tr>
           <td>Modified</td>
-          <td>2:49 PM by me</td>
+          <td>{{selectedFile.last_modified}}</td>
         </tr>
         <tr>
           <td>Created</td>
-          <td>2:49 PM by me</td>
+          <td>{{selectedFile.last_modified}}</td>
         </tr>
       </table>
 

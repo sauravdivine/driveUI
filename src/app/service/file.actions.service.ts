@@ -2,7 +2,7 @@ import { NgRedux } from 'ng2-redux';
 import { IAppState } from '../store/iAppState';
 import { Injectable } from '@angular/core';
 import { FileServices } from './file.services';
-import { FILE_ADD, FILE_DELETE, FILE_UPDATE_SELECTION } from '../store/actions';
+import { FILE_ADD, FILE_DELETE, FILE_UPDATE_SELECTION, TOGGLE_INFO_PANEL } from '../store/actions';
 
 
 
@@ -33,6 +33,12 @@ export class FileActions {
         this.ngRedux.dispatch({
             type: FILE_UPDATE_SELECTION,
             id
+        })
+    }
+
+    toggleInfoPanel(){
+        this.ngRedux.dispatch({
+            type: TOGGLE_INFO_PANEL,
         })
     }
 

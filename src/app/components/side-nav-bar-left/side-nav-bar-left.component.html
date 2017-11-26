@@ -12,8 +12,8 @@
     <app-space-used>loading...</app-space-used>
   </mat-sidenav>
 
-  <mat-sidenav #infoSidenav align="end" mode="side" opened="true" class="right-sidenav">
-    <mat-icon class="close-button" matTooltip="close" (click)="infoSidenav.close()">close</mat-icon>
+  <mat-sidenav #infoSidenav align="end" mode="side" opened="true" class="right-sidenav" *ngIf="(infoPanel$ | async) == true">
+    <mat-icon class="close-button" matTooltip="close" (click)="fileActions.toggleInfoPanel()">close</mat-icon>
     <app-file-info>card loading....</app-file-info>
   </mat-sidenav>
   <mat-sidenav-content class="mat-sidenav-content">

@@ -4,30 +4,42 @@
     max-height: 100%;
     min-width: 300px;
 }
-  
-  .mat-table {
+
+.mat-table {
     overflow: auto;
     max-height: 100%;
-  }
-  
-  .nameCell{
+}
+
+.nameCell {
     display: flex;
     flex-direction: row;
-    align-items:center;
-  }
+    align-items: center;
+}
 
-  .row{
-    border-left: 6px solid #FFFFFF;
-  }
+.row {
+    border-left: 6px solid;
+    // border-left-color: #FFFFFF;
+    // &:hover {
+    //     background-color: #efefef;
+    //     border-left-color: #efefef;
+    // }
+}
 
-  .highlight{
-    background: #efefef;
-    border-left-color:  #039be5;
-  }
-  
-  .my-mat-cell,
-  .my-mat-header-cell {
+// .row {
+//     border-left: 6px solid;
+//     border-left-color: mat-color($background,card);
+//     &:hover {
+//         background-color: mat-color($accent);
+//         border-left-color: mat-color($accent);
+//     }
+// }
+
+// .highlight {
+//     background: #efefef;
+//     border-left-color: #039be5 !important;
+// }
+
+.my-mat-cell,
+.my-mat-header-cell {
     flex: 0 0 70%;
-  }
-
- 
+}

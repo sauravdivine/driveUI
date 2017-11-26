@@ -3,7 +3,10 @@
   <span> &nbsp;Drive</span>
   <span class="spacer"></span>
   <input class="search-input" type="search" placeholder="Search " value="">
-  <mat-icon class="example-icon" matTooltip="Themes">format_color_fill</mat-icon>
+  <button mat-icon-button [matMenuTriggerFor]="themeMenu">
+    <mat-icon class="example-icon">format_color_fill</mat-icon>
+  </button>
+  <!-- <mat-icon class="example-icon" matTooltip="Themes">format_color_fill</mat-icon> -->
   <div class="avtar" [matMenuTriggerFor]="profileMenu"></div>
   <mat-toolbar-row>
     <button mat-raised-button color="accent" [matMenuTriggerFor]="newMenu">NEW</button>
@@ -14,10 +17,27 @@
     <mat-icon class="example-icon" matTooltip="Delete" (click)="deleteFile()" *ngIf="(selectedFileId$ | async) > 0">delete</mat-icon>
     <mat-icon class="example-icon" matTooltip="options">more_vert</mat-icon>
     <mat-icon class="example-icon" matTooltip="Grid view">view_module</mat-icon>
-    <mat-icon class="example-icon" matTooltip="info">info</mat-icon>
+    <mat-icon class="example-icon" matTooltip="info" (click)="toggleInfoPanel()">info</mat-icon>
     <mat-icon class="example-icon" matTooltip="Settings">settings</mat-icon>
   </mat-toolbar-row>
 </mat-toolbar>
+
+<mat-menu #themeMenu="matMenu">
+  <button mat-menu-item (click)="changeTheme('red-theme')">    
+    <span>Red</span>
+  </button>
+  <button mat-menu-item (click)="changeTheme('blue-theme')">    
+    <span>Blue</span>
+  </button>
+  <button mat-menu-item (click)="changeTheme('purple-theme')">    
+    <span>Purple</span>
+  </button>
+  <button mat-menu-item (click)="changeTheme('green-theme')">    
+    <span>Green</span>
+  </button>
+</mat-menu>
+
+
 <mat-menu #profileMenu="matMenu">
   <!-- <app-account-card>card loading....</app-account-card> -->
   <button mat-menu-item>

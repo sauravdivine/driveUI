@@ -36,6 +36,7 @@ import { store } from './store/store';
 import { FileServices } from './service/file.services';
 import { FileActions } from './service/file.actions.service';
 import { FileInfoComponent } from './components/file-info/file-info.component';
+import { ChangeThemeService } from 'app/service/change-theme.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,7 @@ import { FileInfoComponent } from './components/file-info/file-info.component';
     MatSnackBarModule,
     MatTabsModule
   ],
-  providers: [FileServices,FileActions],
+  providers: [FileServices,FileActions,ChangeThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

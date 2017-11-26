@@ -1,16 +1,37 @@
 @import '~@angular/material/theming';
 @import url('//fonts.googleapis.com/icon?family=Material+Icons');
-
-
 @include mat-core();
+@import './themes/blue-theme';
+@import './themes/red-theme';
+@import './themes/purple-theme';
+@import './themes/green-theme';
+@import './app/components/side-nav-bar-left/side-nav-bar-left.component.scss-theme.scss';
+@import './app/components/content-table/content-table.component.scss-theme.scss';
+@mixin my-custom-components($theme) {
+    @include app-side-nav-bar-left-theme($theme);
+    @include app-content-table-theme($theme);
+    /* ... */
+}
 
-$primary: mat-palette($mat-blue, 800);
-$accent:  mat-palette($mat-light-blue, 600, 100, 800);
-$warn:    mat-palette($mat-red, 600);
+.blue-theme {
+    @include angular-material-theme($blue-theme);
+    @include my-custom-components($blue-theme);
+}
 
-$theme: mat-light-theme($primary, $accent, $warn);
+.red-theme {
+    @include angular-material-theme($red-theme);
+    @include my-custom-components($red-theme);
+}
 
-@include angular-material-theme($theme);
+.purple-theme {
+    @include angular-material-theme($purple-theme);
+    @include my-custom-components($purple-theme);
+}
+
+.green-theme {
+  @include angular-material-theme($green-theme);
+  @include my-custom-components($green-theme);
+}
 
 body {
     font-family: $mat-font-family;
@@ -21,7 +42,9 @@ body {
     overflow: hidden;
 }
 
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-weight: normal;
 }

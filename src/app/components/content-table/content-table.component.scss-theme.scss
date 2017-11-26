@@ -1,0 +1,21 @@
+@import '~@angular/material/theming';
+@mixin app-content-table-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    app-content-table {
+        .row {
+            border-left-color: mat-color($background, card);
+            &:hover {
+                background-color: mat-color($background, hover);
+                border-left-color: mat-color($background, hover);
+            }
+        }
+        .highlight {
+            background: mat-color($background, app-bar);
+            border-left-color: mat-color($primary) !important;
+        }
+    }
+}
